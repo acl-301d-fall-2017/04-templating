@@ -8,7 +8,7 @@ let articleView = {};
 // PUT YOUR RESPONSE HERE  'this' in an arrow function doesn't change to take on the instance of the function or object it is in.  'this' 
 // would end up being the window.   
 
-articleView.populateFilters = function() {
+articleView.populateFilters = () => {
     $('article').each(function() {
         
         const author = $(this).attr('data-author');
@@ -42,7 +42,7 @@ articleView.populateFilters = function() {
     });
 };
 
-articleView.handleAuthorFilter = function() {
+articleView.handleAuthorFilter = () => {
     $('#author-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
@@ -55,7 +55,7 @@ articleView.handleAuthorFilter = function() {
     });
 };
 
-articleView.handleCategoryFilter = function() {
+articleView.handleCategoryFilter = () => {
     $('#category-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
@@ -68,7 +68,7 @@ articleView.handleCategoryFilter = function() {
     });
 };
 
-articleView.handleMainNav = function() {
+articleView.handleMainNav = () => {
     $('.main-nav').on('click', '.tab', function() {
         $('.tab-content').hide();
         $(`#${$(this).data('content')}`).fadeIn();
@@ -77,7 +77,7 @@ articleView.handleMainNav = function() {
     $('.main-nav .tab:first').click();
 };
 
-articleView.setTeasers = function() {
+articleView.setTeasers = () => {
     $('.article-body *:nth-of-type(n+2)').hide();
     $('article').on('click', 'a.read-on', function(e) {
         e.preventDefault();
@@ -94,7 +94,7 @@ articleView.setTeasers = function() {
     });
 };
 
-$(document).ready(function (){
+$(document).ready(()=> {
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
