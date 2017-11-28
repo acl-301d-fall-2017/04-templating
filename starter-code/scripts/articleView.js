@@ -79,7 +79,7 @@ articleView.setTeasers = function() {
     });
 };
 
-$(document).ready(() => {
+$(document).ready(function (){
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
