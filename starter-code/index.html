@@ -11,17 +11,19 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
     <script id="article-template" type="text/x-handlebars-template">
-      <article data-category={{this.category}}>
+      <article data-category='{{this.category}}' data-author='{{author}}'>
         <header>
           <h1>{{title}}</h1>
           <div class="byline">
-            By <address><a href={{authorUrl}}>{{author}}</a></address>
-            published <time pubdate datetime={{publishedOn}}>{{publishedStatus}}</time>
+            By <address><a href='{{authorUrl}}'>{{author}}</a></address>
+            published <time pubdate datetime={{publishedOn}}>{{publishStatus}}</time>
           </div>
         </header>
         <section class="article-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
+
+      <!-- Look at all that duplicated markup inside your #filter list items! Looks like a good opportunity to use a template. Make a small template for each filter, and re-render the list once you have data to populate it. -->
     </script>
     <!--
       TODO: Add a script tag to hold the Handlebars template.
