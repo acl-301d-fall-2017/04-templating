@@ -22,49 +22,63 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
+/* house */
 .icon-home:before {
 	content: "\e908";
 }
+/* house2 */
 .icon-home3:before {
 	content: "\e900";
 }
+/* address book */
 .icon-address-book:before {
 	content: "\e901";
 }
+/* rocket */
 .icon-rocket:before {
 	content: "\e909";
 }
+/* lighting bolt */
 .icon-power:before {
 	content: "\e90a";
 }
-.icon-menu:before {
+/* hamburger */
+/* .icon-menu:before {
 	content: "\e902";
-}
+} */
+/* chain link */
 .icon-link:before {
 	content: "\e903";
 }
+/* smiley */
 .icon-happy:before {
 	content: "\e904";
 }
+/* smiley two */
 .icon-happy2:before {
 	content: "\e905";
 }
+/* + */
 .icon-plus:before {
 	content: "\e90b";
 }
+/* - */
 .icon-minus:before {
 	content: "\e90c";
 }
+/* X */
 .icon-cross:before {
 	content: "\e90d";
 }
+/* check mark */
 .icon-checkmark:before {
 	content: "\e90e";
 }
+/* twitter bird */
 .icon-twitter3:before {
 	content: "\e906";
 }
+/* git cat */
 .icon-github:before {
 	content: "\e907";
 }
