@@ -21,7 +21,7 @@
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
     <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓ yesterdays template ↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
-    <article class="template" data-category="cat">
+    <!-- <article class="template" data-category="cat">
       <header>
         <h1>Title</h1>
         <div class="byline">
@@ -31,27 +31,34 @@
       </header>
       <section class="article-body"></section>
       <a href="#" class="read-on">Read on &rarr;</a>
-    </article>
-    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓ Making new template ↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
-    <script class="template" type="text/x-handlebars-template">
+    </article> -->
+    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓ New template ↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <script class="template" data-category="cat">
       <header>
-        <h1>Title</h1>
+        <h1>{{title}}</h1>
         <div class="byline">
-            By <address><a href="">Author Name</a></address>
-            published <time pubdate datetime="2000-01-01">Publish Time</time>
-          </div>
-        <article class="pet">
-          {{{sound}}}
-          <!-- use three handlebars to render HTML tags as HTML -->
-          <h2>{{name}}</h2>
-          <h3>{{type}}</h3>
-          <p>{{description}}</p>
-          <img src='{{image}}'>
-        </article>
+          By <address><a href="">{{Author Name}}</a></address>
+          published <time pubdate datetime="2000-01-01">{{Publish Time}}</time>
+        </div>
       </header>
+      <section class="article-body"></section>
+      <a href="#" class="read-on">{{Read on &rarr;}}</a>
     </script>
-
+    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓ SJs template ↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <!-- <script id="pet-template" type="text/x-handlebars-template">
+      <article class="pet">
+        {{{sound}}}
+        use three handlebars to render HTML tags as HTML
+        <h2>{{name}}</h2>
+        <h3>{{type}}</h3>
+        <p>{{description}}</p>
+        <img src='{{image}}'>
+      </article>
+    </script> -->
   </head>
+
+
+
   <body>
     <header class="site-header clearfix">
       <section class="heading-group-h1">
