@@ -1,0 +1,46 @@
+/* this is our base lab 01 */
+
+/* h1, h2 {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+p {
+    font-family: sans-serif;
+} */
+
+/* this is from lab 03 */
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+img{
+    max-width: 100%;
+    height:auto;
+}
+
+.site-header{
+    background-color: #ffeaaa;
+}
+
+.heading-group-h1, main, footer {
+    padding: 5px;
+}
+
+ul{
+    padding: 0px;
+}
+
+li{
+    list-style-type: none;
+}
