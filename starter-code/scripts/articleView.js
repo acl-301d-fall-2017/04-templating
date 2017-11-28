@@ -10,20 +10,35 @@ let articleView = {};
 
 articleView.populateFilters = function() {
     $('article').each(function() {
-        if (!$(this).hasClass('template')) {
-            let val = $(this).find('address a').text();
-            let optionTag = `<option value="${val}">${val}</option>`;
+        
+        const author = $(this).attr('data-author');
+        const dropDown = $('#dropDown-Template').html();
+        const dropDownTemp = Handlebars.compile(dropDown);
+        const filledTemp = dropDownTemp({value:author});
+        $('#author-filter').append(filledTemp);
+        
+        
+        const cat = $(this).attr('data-category');
+        const filledCat = dropDownTemp({value:cat});
+        $('#category-filter').append(filledCat);
 
-            if ($(`#author-filter option[value="${val}"]`).length === 0) {
-                $('#author-filter').append(optionTag);
-            }
 
-            val = $(this).attr('data-category');
-            optionTag = `<option value="${val}">${val}</option>`;
-            if ($(`#category-filter option[value="${val}"]`).length === 0) {
-                $('#category-filter').append(optionTag);
-            }
-        }
+
+
+        // if (!$(this).hasClass('template')) {
+        //     let val = $(this).find('address a').text();
+        //     let optionTag = `<option value="${val}">${val}</option>`;
+
+        //     if ($(`#author-filter option[value="${val}"]`).length === 0) {
+                // $('#author-filter').append(optionTag);
+        //     }
+
+        //     val = $(this).attr('data-category');
+        //     optionTag = `<option value="${val}">${val}</option>`;
+        //     if ($(`#category-filter option[value="${val}"]`).length === 0) {
+        //         $('#category-filter').append(optionTag);
+        //     }
+        // }
     });
 };
 
