@@ -37,6 +37,18 @@ time {
     padding: 0 0.5em 0 0.5em;
 }
 
+#about li {
+    padding: .5em;
+}
+
+#about ul {
+    margin-bottom: 1em;
+}
+
+#filters li {
+    padding: 5px;
+}
+
 @media (min-width: 640px) {
     .icon-menu {
         visibility: hidden;

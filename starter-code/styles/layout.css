@@ -30,3 +30,8 @@
     color: grey;
     display: flex;
 }
+
+#filters {
+    display: flex;
+    list-style: none;
+}
