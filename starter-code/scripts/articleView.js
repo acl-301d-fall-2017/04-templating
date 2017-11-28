@@ -5,7 +5,7 @@ const articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// Arrow functions take 'this' out of the scope of the function, so 'this' will refer to the window if used in an arrow function. A function can be refactored if it is not dependent on object-specific properties. You can also use arrow functions on the outside function if other fns nested inside it use 'this'.  
 
 articleView.populateFilters = function() {
     $('article').each(function() {
@@ -13,25 +13,27 @@ articleView.populateFilters = function() {
             let val = $(this).find('address a').text();
             let optionTag = `<option value="${val}">${val}</option>`;
 
-            if ($(`#author-filter option[value="${val}"]`).length === 0) {
+            if ($(`#author-filter option[value="${val}"]`).length === 0) { //refactor
                 $('#author-filter').append(optionTag);
             }
 
             val = $(this).attr('data-category');
             optionTag = `<option value="${val}">${val}</option>`;
-            if ($(`#category-filter option[value="${val}"]`).length === 0) {
+            if ($(`#category-filter option[value="${val}"]`).length === 0) { //refactor
                 $('#category-filter').append(optionTag);
             }
         }
     });
 };
 
-articleView.handleAuthorFilter = function() {
+articleView.handleAuthorFilter = () => {
     $('#author-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
-            $(`article[data-author="${$(this).val()}"]`).fadeIn();
-        } else {
+            const selector = `article[data-author='${$(this).val()}']`;
+            console.log(selector);
+            $(selector).fadeIn();
+        } else {  //refactor this
             $('article').fadeIn();
             $('article.template').hide();
         }
@@ -39,12 +41,12 @@ articleView.handleAuthorFilter = function() {
     });
 };
 
-articleView.handleCategoryFilter = function() {
+articleView.handleCategoryFilter = () => {
     $('#category-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
             $(`article[data-category="${$(this).val()}"]`).fadeIn();
-        } else {
+        } else {  //refactor this
             $('article').fadeIn();
             $('article.template').hide();
         }
@@ -52,7 +54,7 @@ articleView.handleCategoryFilter = function() {
     });
 };
 
-articleView.handleMainNav = function() {
+articleView.handleMainNav = () => {
     $('.main-nav').on('click', '.tab', function() {
         $('.tab-content').hide();
         $(`#${$(this).data('content')}`).fadeIn();
@@ -61,7 +63,7 @@ articleView.handleMainNav = function() {
     $('.main-nav .tab:first').click();
 };
 
-articleView.setTeasers = function() {
+articleView.setTeasers = () => {
     $('.article-body *:nth-of-type(n+2)').hide();
     $('article').on('click', 'a.read-on', function(e) {
         e.preventDefault();
@@ -78,7 +80,7 @@ articleView.setTeasers = function() {
     });
 };
 
-$(document).ready(function() {
+$(document).ready(() => {
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();

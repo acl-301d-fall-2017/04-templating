@@ -19,18 +19,34 @@
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
     <script id="article-template" type="text/x-handlebars-template">
-      <article class="article" data-category="cat">
+      <article class="article" data-category="{{category}}" data-author="{{author}}">
         <header>
           <h1>{{title}}</h1>
           <div class="byline">
             By <address><a href="">{{author}}</a></address>
-            published <time pubdate datetime="2000-01-01">{{publishStatus}}</time>
+              <time pubdate datetime="2000-01-01">{{publishStatus}}</time>
           </div>
         </header>
         <section class="article-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
+    <!-- <script id="pulldown-template" type="text/x-handlebars-template">
+      <div>
+          <ul id="filters">
+            <li>
+              <select id="author-filter">
+                <option value="">-- Filter by Authors --</option>
+              </select>
+            </li>
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter by Categories --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+    </script> -->
 
   </head>
   <body>
