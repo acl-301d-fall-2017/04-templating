@@ -1,0 +1,44 @@
+.icon-menu{
+    position: absolute;
+    left: 94%;
+    top: 0%;
+}
+
+@media (min-width:640px){
+    .icon-menu{
+        display:none;
+    }
+
+
+.pull-right{
+    display: block;
+}
+
+@media screen and (min-width:640px){
+    .pull-right{
+        float: right;
+    }
+}
+
+.pull-left{
+    display: block'
+}
+
+@media screen and (mid-width: 640px){
+    .pull-left{
+        float:left;
+    }
+}
+
+.byline {
+    display: flex;
+}
+
+.mainTitle{
+    margin-top: 0px;
+    padding-top: 30px;
+}
+
+.template{
+    display:none;
+}
