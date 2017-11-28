@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+}
+
+.heading-group-h1 {
+    background-color: rgb(254, 233, 173);
+    padding: 30px 10px;
+}
+
+.main-nav {
+    background-color: rgb(254, 233, 173);
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+h2 {
+    margin: 20px 0 0 0;
+}
+
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+}
+
+.clearfix:after {
+    content: " ";
+    clear: both;
+    display: table;
+}
