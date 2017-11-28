@@ -5,7 +5,8 @@ let articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// PUT YOUR RESPONSE HERE  'this' in an arrow function doesn't change to take on the instance of the function or object it is in.  'this' 
+// would end up being the window.   
 
 articleView.populateFilters = function() {
     $('article').each(function() {
@@ -78,10 +79,10 @@ articleView.setTeasers = function() {
     });
 };
 
-$(document).ready(function() {
+$(document).ready(() => {
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
     articleView.handleMainNav();
     articleView.setTeasers();
-})
+});
