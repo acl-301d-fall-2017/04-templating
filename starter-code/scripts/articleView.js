@@ -7,19 +7,19 @@ const articleView = {};
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
 // Arrow functions take 'this' out of the scope of the function, so 'this' will refer to the window if used in an arrow function. A function can be refactored if it is not dependent on object-specific properties. You can also use arrow functions on the outside function if other fns nested inside it use 'this'.  
 
-articleView.populateFilters = function() {
+articleView.populateFilters = () => {
     $('article').each(function() {
         if (!$(this).hasClass('template')) {
             let val = $(this).find('address a').text();
             let optionTag = `<option value="${val}">${val}</option>`;
 
-            if ($(`#author-filter option[value="${val}"]`).length === 0) { //refactor
+            if ($(`#author-filter option[value="${val}"]`).length === 0) { 
                 $('#author-filter').append(optionTag);
             }
 
             val = $(this).attr('data-category');
             optionTag = `<option value="${val}">${val}</option>`;
-            if ($(`#category-filter option[value="${val}"]`).length === 0) { //refactor
+            if ($(`#category-filter option[value="${val}"]`).length === 0) { 
                 $('#category-filter').append(optionTag);
             }
         }
@@ -33,7 +33,7 @@ articleView.handleAuthorFilter = () => {
             const selector = `article[data-author='${$(this).val()}']`;
             console.log(selector);
             $(selector).fadeIn();
-        } else {  //refactor this
+        } else {
             $('article').fadeIn();
             $('article.template').hide();
         }
@@ -46,7 +46,7 @@ articleView.handleCategoryFilter = () => {
         if ($(this).val()) {
             $('article').hide();
             $(`article[data-category="${$(this).val()}"]`).fadeIn();
-        } else {  //refactor this
+        } else {
             $('article').fadeIn();
             $('article.template').hide();
         }
