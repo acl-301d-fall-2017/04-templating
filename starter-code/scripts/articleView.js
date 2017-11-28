@@ -8,21 +8,22 @@ let articleView = {};
 // Arrow functions do not dynamically bind 'this' inside the function body. 'this' will still be attached to the window. A function will be refactored if it does not contain 'this'.
 
 articleView.populateFilters = () => {
+    const authorSource = $('#author-temp').html();
+    const authorTemplate = Handlebars.compile(authorSource);
+
+    const catSource = $('#category-temp').html();
+    const catTemplate = Handlebars.compile(catSource);
+
     $('article').each(function() {
-        if (!$(this).hasClass('template')) {
-            let val = $(this).find('address a').text();
-            let optionTag = `<option value="${val}">${val}</option>`;
+        const author = $(this).attr('data-author');
+        const category = $(this).attr('data-category');
 
-            if ($(`#author-filter option[value="${val}"]`).length === 0) {
-                $('#author-filter').append(optionTag);
-            }
-
-            val = $(this).attr('data-category');
-            optionTag = `<option value="${val}">${val}</option>`;
-            if ($(`#category-filter option[value="${val}"]`).length === 0) {
-                $('#category-filter').append(optionTag);
-            }
-        }
+        const authFilledOut = authorTemplate({author:author});
+        const catFilledOut = catTemplate({category:category});  
+      
+        $('#author-filter').append(authFilledOut);
+        $('#category-filter').append(catFilledOut);
+        
     });
 };
 

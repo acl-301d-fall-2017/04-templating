@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+    <!--
+      TODO: Add a script tag to hold the Handlebars template.
+        - Be sure to give it a meaningful id attribute.
+        - Move your old template structure to here. Remember that this template needs to have the same structure as the old one!
+        - Insert placeholder keys.
+        - If your object doesn't have values you need yet, you can add those properties in the model.
+       -->
     <script id="article-template" type="text/x-handlebars-template">
       <article data-category='{{this.category}}' data-author='{{author}}'>
         <header>
@@ -22,16 +29,14 @@
         <section class="article-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
-
-      <!-- Look at all that duplicated markup inside your #filter list items! Looks like a good opportunity to use a template. Make a small template for each filter, and re-render the list once you have data to populate it. -->
     </script>
-    <!--
-      TODO: Add a script tag to hold the Handlebars template.
-        - Be sure to give it a meaningful id attribute.
-        - Move your old template structure to here. Remember that this template needs to have the same structure as the old one!
-        - Insert placeholder keys.
-        - If your object doesn't have values you need yet, you can add those properties in the model.
-    -->
+    <!-- Look at all that duplicated markup inside your #filter list items! Looks like a good opportunity to use a template. Make a small template for each filter, and re-render the list once you have data to populate it. -->
+    <script id="author-temp" type="text/x-handlebars-template">
+      <option value="{{author}}">{{author}}</option>
+    </script>
+    <script id="category-temp" type="text/x-handlebars-template">
+      <option value="{{category}}">{{category}}</option>
+    </script>
   </head>
   <body>
     <header class="site-header clearfix">
@@ -55,16 +60,16 @@
       <section id="articles" class="tab-content">
         <div>
           <ul id="filters">
-            <li>
-              <select id="author-filter">
-                <option value="">-- Filter by Authors --</option>
-              </select>
-            </li>
-            <li>
-              <select id="category-filter">
-                <option value="">-- Filter by Categories --</option>
-              </select>
-            </li>
+              <li>
+                  <select id="author-filter">
+                      <option value="">-- Filter by Authors --</option>
+                    </select>
+                  </li>
+                  <li>
+                    <select id="category-filter">
+                      <option value="">-- Filter by Categories --</option>      
+                  </select>
+                </li>
           </ul>
         </div>
       </section>
