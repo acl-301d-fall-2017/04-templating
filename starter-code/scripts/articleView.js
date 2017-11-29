@@ -12,7 +12,7 @@ articleView.populateAuthors = () => {
     rawData.forEach(function(element) {
         authors.push(element.author);
     });
-        
+
     const authorTemplate = $('#author-template').html();
     const templateFiller = Handlebars.compile(authorTemplate);
     authors.forEach(author => {
@@ -27,7 +27,7 @@ articleView.populateCategories = () => {
     rawData.forEach(function(element) {
         categories.push(element.category);
     });
-        
+
     const categoryTemplate = $('#category-template').html();
     const templateFiller = Handlebars.compile(categoryTemplate);
     categories.forEach(category => {
