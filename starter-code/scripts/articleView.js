@@ -5,7 +5,9 @@ let articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// arrow functions disallow the use of 'this' within the context of a function.
+// it appears that you can use 'this' inside of a regular function that is nested within an arrow function.
+// but you cannot use 'this' directly inside of an arrow function.
 
 articleView.populateFilters = () => {
     $('article').each(function() {
