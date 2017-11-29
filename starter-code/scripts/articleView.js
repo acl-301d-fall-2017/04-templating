@@ -5,10 +5,9 @@ let articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
-// "This" is used in conjunction to reference the object they are contained within. In arrow functions, "this" will return the global window that contains whatever object "this" is contained in, unless "this" directly references or finds the element it is contained in.
+// "This" is bound to the constructor object in which it is referenced. In arrow functions, the use of "this" will return the global window that contains that function. However "this" may be used within a nested function because "this" has "lexical context" (its value is bound to the particular object being referenced in the function). I determined that the main (outer) functions could utilize the arrow method, because they did not contain "this" values.
 
-articleView.populateFilters = function() {
+articleView.populateFilters = () => {
     $('article').each(function() {
         if (!$(this).hasClass('template')) {
             let val = $(this).find('address a').text();
@@ -27,7 +26,7 @@ articleView.populateFilters = function() {
     });
 };
 
-articleView.handleAuthorFilter = function() {
+articleView.handleAuthorFilter = () => {
     $('#author-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
@@ -40,7 +39,7 @@ articleView.handleAuthorFilter = function() {
     });
 };
 
-articleView.handleCategoryFilter = function() {
+articleView.handleCategoryFilter = () => {
     $('#category-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
@@ -53,7 +52,7 @@ articleView.handleCategoryFilter = function() {
     });
 };
 
-articleView.handleMainNav = function() {
+articleView.handleMainNav = () => {
     $('.main-nav').on('click', '.tab', function() {
         $('.tab-content').hide();
         $(`#${$(this).data('content')}`).fadeIn();
@@ -62,7 +61,7 @@ articleView.handleMainNav = function() {
     $('.main-nav .tab:first').click();
 };
 
-articleView.setTeasers = function() {
+articleView.setTeasers = () => {
     $('.article-body *:nth-of-type(n+2)').hide();
     $('article').on('click', 'a.read-on', function(e) {
         e.preventDefault();
