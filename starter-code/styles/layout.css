@@ -1,0 +1,32 @@
+.pull-right{
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.clearfix:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.site-header{
+    background-color: #faeaaa;
+}
+
+.heading-group-h1 {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.heading-group-h1 h1 {
+    font-size: 2em;
+}
+
+.byline {
+    color: grey;
+    display: flex;
+}
