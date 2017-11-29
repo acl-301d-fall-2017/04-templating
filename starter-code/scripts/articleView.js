@@ -33,8 +33,8 @@ articleView.handleAuthorFilter = function() {
             $('article').hide();
             $(`article[{data-author}="${$(this).val()}"]`).fadeIn();
         } else {
-            // $('article').fadeIn();
-            $('article:not(template').show();
+            $('article').fadeIn();
+            //$('article:.template'.hide();
         }
         $('#category-filter').val('');
     });
@@ -46,8 +46,8 @@ articleView.handleCategoryFilter = function() {
             $('article').hide();
             $(`article[data-category="${$(this).val()}"]`).fadeIn();
         } else {
-            // $('article').fadeIn();
-            $('article:not(.template)').show();
+            $('article').fadeIn();
+            //   $('article.template').hide();
         }
         $('#author-filter').val('');
     });
