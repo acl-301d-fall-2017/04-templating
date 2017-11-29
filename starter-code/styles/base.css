@@ -1,0 +1,35 @@
+nav > ul > li > a{
+    text-decoration: none;
+    color: #808080;
+}
+nav > ul > li{
+    padding: 3%;
+    margin-top: -3%;
+    border-bottom: 1px solid #808080;
+}
+nav > ul{
+    margin-left: -1.5%;
+}
+#articles{
+    padding: 3%;
+    font-family: Helvetica, sans-serif;
+}
+.byline{
+    display: inline;
+    color: grey;
+    font-size: 14px;
+}
+.byline > address{
+    display: inline;
+}
+.byline > address > a{
+    display: inline;
+    text-decoration: none;
+    color: grey;
+}
+header > h1{
+    margin-top: 1.5%;
+}
+.heading-group-h1 > h1, .heading-group-h1 > h2{
+    margin-left: 3%;
+}
