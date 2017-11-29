@@ -6,6 +6,7 @@ let articleView = {};
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
 // PUT YOUR RESPONSE HERE
+// "This" is used in conjunction to reference the object they are contained within. In arrow functions, "this" will return the global window that contains whatever object "this" is contained in, unless "this" directly references or finds the element it is contained in.
 
 articleView.populateFilters = function() {
     $('article').each(function() {
@@ -30,7 +31,7 @@ articleView.handleAuthorFilter = function() {
     $('#author-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
-            $(`article[data-author="${$(this).val()}"]`).fadeIn();
+            $(`article[{data-author}="${$(this).val()}"]`).fadeIn();
         } else {
             // $('article').fadeIn();
             $('article:not(template').show();
@@ -78,7 +79,7 @@ articleView.setTeasers = function() {
     });
 };
 
-$(document).ready(function() {
+$(document).ready( () => {
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
