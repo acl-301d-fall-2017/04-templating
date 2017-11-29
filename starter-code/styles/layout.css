@@ -21,7 +21,7 @@
 }
 
 .pull-left{
-    display: block'
+    display: block;
 }
 
 @media screen and (mid-width: 640px){
@@ -34,11 +34,7 @@
     display: flex;
 }
 
-.mainTitle{
+.mainTitle {
     margin-top: 0px;
     padding-top: 30px;
-}
-
-.template{
-    display:none;
 }

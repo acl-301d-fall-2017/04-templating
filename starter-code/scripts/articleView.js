@@ -61,7 +61,7 @@ articleView.handleMainNav = function() {
     $('.main-nav .tab:first').click();
 };
 
-articleView.setTeasers = function() {
+articleView.setTeasers = () => {
     $('.article-body *:nth-of-type(n+2)').hide();
     $('article').on('click', 'a.read-on', function(e) {
         e.preventDefault();
@@ -78,10 +78,10 @@ articleView.setTeasers = function() {
     });
 };
 
-$(document).ready(function() {
+$(document).ready = () => {
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
     articleView.handleMainNav();
     articleView.setTeasers();
-});
+};
