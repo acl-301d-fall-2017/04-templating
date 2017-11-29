@@ -6,26 +6,41 @@ const articleView = {};
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
 // Arrow functions take 'this' out of the scope of the function, so 'this' will refer to the window if used in an arrow function. A function can be refactored if it is not dependent on object-specific properties. You can also use arrow functions on the outside function if other fns nested inside it use 'this'.  
+const authorTemplate = $('#author-template').html();
+const templateFiller = Handlebars.compile(authorTemplate);
 
-articleView.populateFilters = () => {
-    $('article').each(function() {
-        if (!$(this).hasClass('template')) {
-            let val = $(this).find('address a').text();
-            let optionTag = `<option value="${val}">${val}</option>`;
+// articleView.populateFilters = () => {
+//     $('article').each(function() {
 
-            if ($(`#author-filter option[value="${val}"]`).length === 0) { 
-                $('#author-filter').append(optionTag);
-            }
+//         const filledTemplate = templateFiller(this);
+//         return filledTemplate;
 
-            val = $(this).attr('data-category');
-            optionTag = `<option value="${val}">${val}</option>`;
-            if ($(`#category-filter option[value="${val}"]`).length === 0) { 
-                $('#category-filter').append(optionTag);
-            }
-        }
-    });
-};
+//     });
+// };
+const authors = [];
+rawData.forEach(function(element) {
+    authors.push(element.author);
+});
 
+authors.forEach(author => {
+    const filledTemplate = templateFiller(author);
+    $('#author-filter').append(filledTemplate);
+});
+
+// if (!$(this).hasClass('template')) {
+//     let val = $(this).find('address a').text();
+//     let optionTag = `<option value="${val}">${val}</option>`;
+
+//     if ($(`#author-filter option[value="${val}"]`).length === 0) {
+//         $('#author-filter').append(optionTag);
+//     }
+
+//     val = $(this).attr('data-category');
+//     optionTag = `<option value="${val}">${val}</option>`;
+//     if ($(`#category-filter option[value="${val}"]`).length === 0) {
+//         $('#category-filter').append(optionTag);
+//     }
+// }
 articleView.handleAuthorFilter = () => {
     $('#author-filter').on('change', function() {
         if ($(this).val()) {
