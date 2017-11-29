@@ -28,12 +28,13 @@ articleView.populateFilters = function() {
 
 articleView.handleAuthorFilter = function() {
     $('#author-filter').on('change', function() {
+        console.log(`wth is this.val()????: ${$(this).val()}` );
         if ($(this).val()) {
             $('article').hide();
             $(`article[data-author="${$(this).val()}"]`).fadeIn();
+            // $(`article[data-author="Meow Meow"]`).fadeIn();
         } else {
             $('article').fadeIn();
-            $('article.template').hide();
         }
         $('#category-filter').val('');
     });
