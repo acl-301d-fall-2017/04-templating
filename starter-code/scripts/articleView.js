@@ -5,23 +5,22 @@ const articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+
+// Arrow functions don't change the value of the keyword this. It appears (thanks, Jacob!) that if a function has nested functions, the this will continue to work within the nested function. 
 
 articleView.populateFilters = () => {
     $('article').each(function() {
-        if (!$(this).hasClass('template')) {
-            let val = $(this).find('address a').text();
-            let optionTag = `<option value="${val}">${val}</option>`;
+        let val = $(this).find('address a').text();
+        let optionTag = `<option value="${val}">${val}</option>`;
 
-            if ($(`#author-filter option[value="${val}"]`).length === 0) {
-                $('#author-filter').append(optionTag);
-            }
+        if ($(`#author-filter option[value="${val}"]`).length === 0) {
+            $('#author-filter').append(optionTag);
+        }
 
-            val = $(this).attr('data-category');
-            optionTag = `<option value="${val}">${val}</option>`;
-            if ($(`#category-filter option[value="${val}"]`).length === 0) {
-                $('#category-filter').append(optionTag);
-            }
+        val = $(this).attr('data-category');
+        optionTag = `<option value="${val}">${val}</option>`;
+        if ($(`#category-filter option[value="${val}"]`).length === 0) {
+            $('#category-filter').append(optionTag);
         }
     });
 };
@@ -55,7 +54,6 @@ articleView.handleMainNav = () => {
         $('.tab-content').hide();
         $(`#${$(this).data('content')}`).fadeIn();
     });
-
     $('.main-nav .tab:first').click();
 };
 
