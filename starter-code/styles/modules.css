@@ -1,14 +1,5 @@
-.main-nav:after {
-    content: "\e902";
-    font-family: 'icomoon';
-    speak: none;
-    position: absolute;
-    top: 0px;
-    right: 2px;
-}
-
 @media screen and (min-width: 640px){
-    .main-nav:after {
+    .icon-menu:before {
         display:none;
       }
 }
