@@ -36,13 +36,8 @@
           <option>{{author}}</option>
     </script>
 
-    <script id="pulldown-template" type="text/x-handlebars-template">
-      <li id="category-template"> 
-        <select id="category-filter">
-          <option value="">-- Filter by Categories --</option>
+    <script id="category-template" type="text/x-handlebars-template">
           <option>{{category}}</option>
-        </select>
-      </li>
     </script>
 
   </head>
@@ -57,7 +52,7 @@
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul>
-          <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
+          <li class="tab" data-content="articles"><a href="#" class="icon-home">Home</a></li>
           <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
           <li><a href="http://twitter.com/brookr" target="_blank" class="icon-twitter3"> Twitter</a></li>
           <li><a href="http://github.com/brookr" target="_blank" class="icon-github"> GitHub</a></li>
@@ -68,12 +63,15 @@
       <section id="articles" class="tab-content">
         <div>
           <ul id="filters">
-            <li id="authors"><select id="author-filter">
+            <li id="authors">
+              <select id="author-filter">
                 <option value="">-- Filter by Authors --</option>
-            </select>
+              </select>
           </li>
-            
-            <li id="categories"></li>
+          <li id="category-template"> 
+              <select id="category-filter">
+                  <option value="">-- Filter by Categories --</option>
+                  <li id="categories"></li>
           </ul>
         </div>
       </section>
