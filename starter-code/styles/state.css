@@ -1,0 +1,23 @@
+@media screen and (max-width:640px){
+    ul{
+        display:none;
+    }
+    .main-nav:hover > ul{
+
+        display:block;
+    }
+    li{
+        border-bottom: grey solid 1px;
+    }
+}
+
+@media screen and (min-width: 640px){
+    ul{
+        display: flex;
+    }
+    
+    li{
+        margin-left: 20px;
+    }
+
+}

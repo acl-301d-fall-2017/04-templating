@@ -1,0 +1,34 @@
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+img{
+    max-width: 100%;
+    height:auto;
+}
+
+.site-header{
+    background-color: #ffeaaa;
+}
+
+.heading-group-h1, main, footer {
+    padding: 5px;
+}
+
+ul{
+    padding: 0px;
+}
+
+li{
+    list-style-type: none;
+}
+
+img{
+    max-height: 250px;
+    max-width: auto;
+}
