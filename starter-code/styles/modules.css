@@ -1,0 +1,49 @@
+ul {    
+    display: flex;
+    list-style-type: none;
+    margin: 0 auto;
+    padding-right: 10px;
+}
+
+ul li {
+    padding-right: 10px;
+    font-size: 15pt;
+    margin-bottom: 20px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.byline address a, time {
+    padding: 0 5px;
+}
+
+.byline address a {
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 640px) {
+    .main-nav ul {
+        display: none;
+    }
+    
+    ul li {
+        border-bottom: solid 1px rgb(204, 204, 204);
+        padding-bottom: 15px;
+    }
+
+    img {
+        width: 100%;
+        padding: 15px 0;
+    }
+}
+
+.template {
+    display: none;
+}

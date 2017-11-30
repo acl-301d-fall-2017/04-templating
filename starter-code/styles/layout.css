@@ -1,0 +1,35 @@
+#articles {
+    margin: 0 15px;
+}
+
+.byline {
+    display: flex;
+    color: rgb(119, 119, 119);
+}
+
+
+@media screen and (max-width: 640px) {
+    .icon-menu {
+        position: absolute;
+        margin: 8px 2px 0 0;
+        top: 0;
+        right: 0;
+        font-size: 45px;
+    }
+
+    .icon-menu:hover + ul {
+        display: block;
+        padding-left: 3px;
+        padding-bottom: 2px;
+    }
+
+    .byline {
+        font-size: 9pt;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .icon-menu {
+        display: none;
+    }
+}
