@@ -1,0 +1,72 @@
+.main-nav{
+    display: flex;
+    position: relative;
+}
+
+.icon-menu{
+    position: absolute;
+    right: 5px;
+    top: -135px;
+    font-size: 2em;
+}
+
+.template {
+    display: none;
+}
+
+.main ul {
+    display: none;
+}
+
+.main-nav ul li {
+    border-bottom: 1px solid grey;
+    padding: 5px 0px 5px 0px;
+    color: grey;
+    font-family: serif;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.icon-menu:hover + ul {
+    display: block;
+    width: 100%;
+}
+
+address,
+time {
+    padding: 0 0.5em 0 0.5em;
+}
+
+#about li {
+    padding: .5em;
+}
+
+#about ul {
+    margin-bottom: 1em;
+}
+
+#filters li {
+    padding: 5px;
+}
+
+@media (min-width: 640px) {
+    .icon-menu {
+        visibility: hidden;
+    }
+
+    .main-nav ul {
+        display: flex;
+        list-style-type: none;
+        padding-left: 30px;
+    }
+
+    .main-nav ul li {
+        padding-right: 30px;
+        border-bottom: none;
+    }
+
+    img {
+        width: inherit;
+    }
+}
+
