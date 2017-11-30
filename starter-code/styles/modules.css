@@ -1,0 +1,52 @@
+/* this is from lab 03 */
+
+.main-nav:after {
+    content: "\e902";
+    font-family: 'icomoon';
+    speak: none;
+    position: absolute;
+    top: 0px;
+    right: 11px;
+}
+
+@media screen and (min-width: 640px){
+    .main-nav:after {
+        display:none;
+      }
+}
+
+.pull-right{
+    display: block;
+}
+
+@media screen and (min-width:640px){
+    .pull-right{
+        float: right;
+    }
+}
+
+.pull-left{
+    display: block'
+}
+
+@media screen and (mid-width: 640px){
+    .pull-left{
+        float:left;
+    }
+}
+
+.byline {
+    display: flex;
+}
+
+.mainTitle{
+    margin-top: 0px;
+    padding-top: 30px;
+}
+
+address,
+time {
+    padding: 0 0.5em 0 0.5em
+}
+
+/* new below */
